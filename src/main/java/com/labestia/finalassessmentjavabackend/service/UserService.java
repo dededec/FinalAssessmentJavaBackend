@@ -17,6 +17,18 @@ public class UserService {
     }
 
     public User createUser(User user) {
-        return repository.save(user);
+        if(checkInput(user)) {
+            return repository.save(user);
+        }
+
+        return null;
+    }
+
+    private boolean checkInput(User user) {
+        return !user.getFirstName().isEmpty()
+                && !user.getLastName().isEmpty()
+                && user.getEmail().length() > 0
+                && user.getEmail().toLowerCase().matches("^([a-z])(\\w+)@([a-z]+)\\.([a-z]+)$")
+                && user.getPhoneNumber().length() > 0 && user.getPhoneNumber().matches("^(\\d+)$");
     }
 }

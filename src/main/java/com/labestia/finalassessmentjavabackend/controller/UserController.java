@@ -20,7 +20,12 @@ public class UserController {
     @PostMapping(path = "/users")
     public ResponseEntity<User> createUser(@RequestBody User user) {
         User createdUser = service.createUser(user);
-        return new ResponseEntity<>(createdUser, HttpStatus.CREATED);
+        if(user == null) {
+            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+        }
+        else {
+            return new ResponseEntity<>(createdUser, HttpStatus.CREATED);
+        }
     }
 
     @GetMapping(path = "/users")
