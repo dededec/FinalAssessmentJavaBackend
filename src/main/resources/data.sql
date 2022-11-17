@@ -1,0 +1,3 @@
+INSERT INTO `user_details` (first_name, last_name, phone_number, email) VALUES ('Leuri','Alonso', '953232323', 'leuri@gmail.com');
+INSERT INTO `user_details` (first_name, last_name, phone_number, email) VALUES ('Miguel Ángel','Muñoz', '953401329', 'mangel@gmail.com');
+INSERT INTO `user_details` (first_name, last_name, phone_number, email) VALUES ('Fernando','Girón', '904267881', 'fernandito@terra.com');
