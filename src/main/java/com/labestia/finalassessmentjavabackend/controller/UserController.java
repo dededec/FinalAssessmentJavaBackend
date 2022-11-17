@@ -20,7 +20,7 @@ public class UserController {
     @PostMapping(path = "/users")
     public ResponseEntity<User> createUser(@RequestBody User user) {
         User createdUser = service.createUser(user);
-        if(user == null) {
+        if(createdUser == null) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
         else {
